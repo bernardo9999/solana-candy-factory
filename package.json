@@ -1,5 +1,6 @@
 {
   "name": "candy-factory",
+  "homepage": "http://bernardo9999.github.io/solana-candy-factory",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,7 +18,9 @@
     "setup-solana-main": "./devtools/main/setup-solana-main.sh",
     "setup-metaplex-main": "node ./devtools/main/setup-metaplex-main.js",
     "setup-envs-main": "node ./devtools/main/setup-envs-main.js",
-    "deploy-mainnet": "yarn setup-solana-main && yarn setup-metaplex-main && yarn setup-envs-main"
+    "deploy-mainnet": "yarn setup-solana-main && yarn setup-metaplex-main && yarn setup-envs-main",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -56,6 +59,7 @@
     "envfile": "^6.17.0",
     "eslint": "^8.4.1",
     "eslint-config-next": "11.1.2",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.3.9",
     "shelljs": "^0.8.4",
     "strapi-sdk-javascript": "^0.3.3",
