@@ -22,23 +22,22 @@ const Home = () => {
     <main className="p-5">
       <Toaster />
       <Head>
-        <title>Solana Candy Factory</title>
+        <title>Solana Furia NFT Factory</title>
         <meta name="description" content="Solana blockchain candy machine app boilerplate on top of Metaplex Candy Machine. NextJS, Tailwind, Anchor, SolanaLabs.React, dev/mainnet automation scripts." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo1.ico" />
       </Head>
 
       <Header />
 
       <div className="flex flex-col justify-center items-center flex-1 space-y-3 mt-20">
-        <img
-          className="rounded-md shadow-lg"
-          src={`/candy.jpeg`}
+      <img style={{width:"45% !important"}}
+          className="rounded-md"
+          src={`/furia.png`}
           height={200}
-          width={200}
-          alt="Candy Image" />
+          alt="Furia Image" />
 
         <span className="text-gray-800 font-bold text-2xl cursor-default">
-          THIS IS THE BEST CANDY MACHINE EVER
+          FURIA NFT FACTORY MACHINE
         </span>
 
         {!wallet.connected && <span
@@ -59,8 +58,8 @@ const Home = () => {
 
         <div className="flex flex-col justify-start items-start">
           {wallet.connected &&
-            <RecaptchaButton
-              actionName="mint"
+            <button
+              type="button"
               disabled={isSoldOut || isMinting || !isActive}
               onClick={onMint}
             >
@@ -75,12 +74,12 @@ const Home = () => {
                   renderer={renderCounter}
                 />
               }
-            </RecaptchaButton>
+            </button>
           }
 
           {wallet.connected &&
-            <RecaptchaButton
-              actionName="mint5"
+            <button
+              type="button"
               disabled={isSoldOut || isMinting || !isActive}
               onClick={() => onMintMultiple(5)}
             >
@@ -95,7 +94,7 @@ const Home = () => {
                   renderer={renderCounter}
                 />
               }
-            </RecaptchaButton>
+            </button>
           }
         </div>
         <Footer />
